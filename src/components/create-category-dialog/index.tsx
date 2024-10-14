@@ -54,14 +54,21 @@ export function CreateCategoryDialog() {
                         <Input
                             label="Nome" placeholder="Nome da categoria"
                             {...register("title")}
-                           //  error={formState.errors?.title?.message}
-
                         />
+                        {formState.errors?.title && (
+                            <span style={{ color: 'red' }}>
+                                {formState.errors.title?.message}
+                            </span>
+                        )}
                         <Input
                             label="Cor" type="color"
                             {...register("color")}
-                          //  error={formState.errors?.title?.message}
                         />
+                        {formState.errors?.color && (
+                            <span style={{ color: 'red' }}>
+                                {formState.errors.color.message}
+                            </span>
+                        )}
                     </div>
                     <footer>
                         <Button onClick={handleClose} variant="outline" type="button">Cancelar</Button>

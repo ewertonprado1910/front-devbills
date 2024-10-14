@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { Dialog } from "../dialog";
 import { Button } from "../button";
@@ -7,8 +7,12 @@ import { Input } from "../input";
 import { Container, Content, CurrencyInput, InputGroup, RadioForm, RadioGroup } from "./styles";
 import { InputMask } from "@react-input/mask";
 
+
 export function CreateTransactionDialog() {
+    
     const [open, setOpen] = useState(false)
+
+    
 
     const handleClose = useCallback(() => {
         setOpen(false)
@@ -37,7 +41,9 @@ export function CreateTransactionDialog() {
                             <label>Categoria</label>
                             <select>
                                 <option value="null">Selecione uma categoria</option>
+                
                             </select>
+
                         </InputGroup>
 
                         <Input label="Nome" placeholder="Nome da Transação" />
